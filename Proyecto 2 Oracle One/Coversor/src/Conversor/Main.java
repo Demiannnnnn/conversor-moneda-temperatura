@@ -31,13 +31,13 @@ public class Main {
                                   JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.dolar(moneda, opcion1));
                              }
                               case "Peso a Euro", "Euro a Pesos" -> {
-                                  JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.dolar(moneda, opcion1));
+                                  JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.euro(moneda, opcion1));
                              }
                               case "Peso a Libras", "Libras a Pesos" -> {
-                                  JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.dolar(moneda, opcion1));
+                                  JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.libras(moneda, opcion1));
                              }
                               case "Peso a Yen", "Yen a Pesos" -> {
-                                 JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.dolar(moneda, opcion1));
+                                 JOptionPane.showMessageDialog(null, "El valor seria de: " + FuncMon.yen(moneda, opcion1));
                              }
                               default ->{
                                   JOptionPane.showMessageDialog(null, "El valor seria: " + FuncMon.wonCoreano(moneda, opcion1));
