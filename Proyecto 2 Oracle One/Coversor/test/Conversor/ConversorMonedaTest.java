@@ -37,9 +37,9 @@ class ConversorMonedaTest {
     @Test
     void wonCoreano() {
         assertEquals(154, conversor.wonCoreano(100, "Peso a Won Coreano"), DELTA);
-        // La etiqueta del menu en Main es "Won Coreando a Pesos"; cualquier opcion
+        // La etiqueta del menu en Main es "Won Coreano a Pesos"; cualquier opcion
         // distinta de "Peso a Won Coreano" convierte de won a pesos.
-        assertEquals(65, conversor.wonCoreano(100, "Won Coreando a Pesos"), DELTA);
+        assertEquals(65, conversor.wonCoreano(100, "Won Coreano a Pesos"), DELTA);
     }
 
     @Test
@@ -57,7 +57,7 @@ class ConversorMonedaTest {
             {conversor.euro(1, "Peso a Euro"), conversor.euro(1, "Euro a Pesos")},
             {conversor.libras(1, "Peso a Libras"), conversor.libras(1, "Libras a Pesos")},
             {conversor.yen(1, "Peso a Yen"), conversor.yen(1, "Yen a Pesos")},
-            {conversor.wonCoreano(1, "Peso a Won Coreano"), conversor.wonCoreano(1, "Won Coreando a Pesos")},
+            {conversor.wonCoreano(1, "Peso a Won Coreano"), conversor.wonCoreano(1, "Won Coreano a Pesos")},
         };
         for (double[] par : pares) {
             double producto = par[0] * par[1];

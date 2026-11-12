@@ -21,7 +21,7 @@ public class Main {
                          double moneda = parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de dinero que desea convertir: "));
                          String opcion1 = (String)(JOptionPane.showInputDialog(null, 
                               "Seleccione una opción de conversión ", "Menu", JOptionPane.QUESTION_MESSAGE, 
-                              null, new Object[] {"Peso a Dolar", "Peso a Euro", "Peso a Libras", "Peso a Yen", "Peso a Won Coreano", "Dolar a Pesos", "Euro a Pesos", "Libras a Pesos", "Yen a Pesos", "Won Coreando a Pesos"}, "Seleccion")); 
+                              null, new Object[] {"Peso a Dolar", "Peso a Euro", "Peso a Libras", "Peso a Yen", "Peso a Won Coreano", "Dolar a Pesos", "Euro a Pesos", "Libras a Pesos", "Yen a Pesos", "Won Coreano a Pesos"}, "Seleccion")); 
                          if(null == opcion1){
                              System. exit(0);
 
