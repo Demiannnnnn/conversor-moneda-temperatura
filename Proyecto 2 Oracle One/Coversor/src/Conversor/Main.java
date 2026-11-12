@@ -1,8 +1,21 @@
 package Conversor;
-import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
 
 public class Main {
+
+    // Convierte el texto ingresado a número; acepta decimales con punto o coma.
+    // Lanza NullPointerException si se canceló el cuadro (entrada null) y
+    // NumberFormatException si el texto no es un número.
+    public static double parsearMonto(String entrada) {
+        if (entrada == null) {
+            throw new NullPointerException("La entrada no puede ser null");
+        }
+        String normalizado = entrada.trim().replace(',', '.');
+        if (normalizado.isEmpty()) {
+            throw new NumberFormatException("Cadena vacía");
+        }
+        return Double.parseDouble(normalizado);
+    }
 
     public static void main(String[] args) {
         ConversorTemperatura FuncTemp = new ConversorTemperatura();
@@ -18,7 +31,7 @@ public class Main {
                while (true){
 
                     try{
-                         double moneda = parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de dinero que desea convertir: "));
+                         double moneda = parsearMonto(JOptionPane.showInputDialog("Ingrese la cantidad de dinero que desea convertir: "));
                          String opcion1 = (String)(JOptionPane.showInputDialog(null, 
                               "Seleccione una opción de conversión ", "Menu", JOptionPane.QUESTION_MESSAGE, 
                               null, new Object[] {"Peso a Dolar", "Peso a Euro", "Peso a Libras", "Peso a Yen", "Peso a Won Coreano", "Dolar a Pesos", "Euro a Pesos", "Libras a Pesos", "Yen a Pesos", "Won Coreano a Pesos"}, "Seleccion")); 
@@ -58,16 +71,10 @@ public class Main {
                             System.exit(0);
                         }
                     }catch(NumberFormatException | NullPointerException e){
-                         String errorMessage = e.getMessage();
-                         switch (errorMessage) {
-                            case "Cannot parse null string" -> {
-                                System.exit(0);
-                            }
-                            case "for input string: \"\"" -> {
-                                JOptionPane.showMessageDialog(null, errorMessage);
-                            }
-                            
+                        if (e instanceof NullPointerException) {
+                            System.exit(0); // se canceló el cuadro de entrada
                         }
+                        JOptionPane.showMessageDialog(null, "Valor no válido. Ingrese un número (se aceptan decimales con punto o coma).");
                     }
                }
            }
@@ -75,7 +82,7 @@ public class Main {
                while (true){
 
                     try{
-                         double temperatura = parseInt(JOptionPane.showInputDialog("Ingrese la temperatura: "));
+                         double temperatura = parsearMonto(JOptionPane.showInputDialog("Ingrese la temperatura: "));
                          String opcion1 = (String)(JOptionPane.showInputDialog(null, 
                               "Seleccione una opción de conversión ", "Menu", JOptionPane.QUESTION_MESSAGE, 
                               null, new Object[] {"Celsius a Fahrenheit", "Celsius a Kelvin", "Fahrenheit a Celsius", "Fahrenheit a Kelvin", "Kelvin a Celsius", "Kelvin a Fahrenheit"}, "Seleccion")); 
@@ -109,16 +116,10 @@ public class Main {
                             System.exit(0);
                         }
                     }catch(NumberFormatException | NullPointerException e){
-                         String errorMessage = e.getMessage();
-                         switch (errorMessage) {
-                            case "Cannot parse null string" -> {
-                                System.exit(0);
-                            }
-                            case "for input string: \"\"" -> {
-                                JOptionPane.showMessageDialog(null, errorMessage);
-                            }
-                            
+                        if (e instanceof NullPointerException) {
+                            System.exit(0); // se canceló el cuadro de entrada
                         }
+                        JOptionPane.showMessageDialog(null, "Valor no válido. Ingrese un número (se aceptan decimales con punto o coma).");
                     }
                }
            }
