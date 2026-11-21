@@ -23,8 +23,7 @@ public class Main {
                               "Seleccione una opción de conversión ", "Menu", JOptionPane.QUESTION_MESSAGE, 
                               null, new Object[] {"Peso a Dolar", "Peso a Euro", "Peso a Libras", "Peso a Yen", "Peso a Won Coreano", "Dolar a Pesos", "Euro a Pesos", "Libras a Pesos", "Yen a Pesos", "Won Coreando a Pesos"}, "Seleccion")); 
                          if(null == opcion1){
-                             System. exit(0);
-
+                             System.exit(0);
                          }
                          else switch (opcion1) {
                               case "Peso a Dolar", "Dolar a Pesos" -> {
@@ -80,8 +79,7 @@ public class Main {
                               "Seleccione una opción de conversión ", "Menu", JOptionPane.QUESTION_MESSAGE, 
                               null, new Object[] {"Celsius a Fahrenheit", "Celsius a Kelvin", "Fahrenheit a Celsius", "Fahrenheit a Kelvin", "Kelvin a Celsius", "Kelvin a Fahrenheit"}, "Seleccion")); 
                          if(null == opcion1){
-                             System. exit(0);
-
+                             System.exit(0);
                          }
                          else switch (opcion1) {
                               case "Celsius a Fahrenheit", "Celsius a Kelvin" -> {
@@ -125,8 +123,6 @@ public class Main {
 
 
         }
-        
-//cierre del while
-   }
+    }
     
 }
